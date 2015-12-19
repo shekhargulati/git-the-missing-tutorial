@@ -8,8 +8,16 @@ Let's master Git. This tutorial will help you get started with Git.
 * Why version control system?
 * What the heck is Git?
 * Git basic commands
+  * git init
+  * git add
+  * git commit
+  * git checkout
+  * git log
+  * git status
 * Branch
 * Remote
+  * git remote
+* Pull
 * Merge and Rebase
 * Github basics
 * Advanced topics
@@ -17,3 +25,5 @@ Let's master Git. This tutorial will help you get started with Git.
   * Alias
   * Cherry pick
 * Why and What Pull Requests?
+* Optional
+  * Using Git from within your IDE(Eclipse)
