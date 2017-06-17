@@ -23,7 +23,7 @@ $ git config --global user.name "Your name"
 $ git config --global user.email "Your email"
 ```
 
-The command shown above populates a file named `.gitconfig` (if not created already) in your user home directory with configuration information.
+The command shown above populates a file named `.gitconfig` in your user home directory with configuration information.
 
 ```bash
 $ cat ~/.gitconfig
@@ -86,7 +86,7 @@ You can use version control system to store:
 
 ## Why version control system?
 
-You should use version control it offers the below:
+You should use version control because it offers the below:
 
 1. Collaboration among a team of Coders
 2. Versioning the code. Could create multiple branches to setup binary releases
