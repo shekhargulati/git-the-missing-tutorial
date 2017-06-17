@@ -1041,7 +1041,7 @@ TODO
 
 ## Git Gui
 
-I mostly use command-line terminal. For Mac, I find [gitx](http://gitx.frim.nl/)
+I mostly use command-line terminal. For Mac, I find [gitx](http://gitx.frim.nl/) useful.
 
 ## Useful Git Commands
 
