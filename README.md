@@ -573,7 +573,7 @@ $ git commit -am "fifth commit. Read tutorial"
 
 ### git merge (ff)
 
-Once we are done with our feature, we can merge it back to master.
+Once we are done with our feature, we can merge it back to master. First, we'll switch to `master` branch.
 
 ```bash
 $ git checkout master
