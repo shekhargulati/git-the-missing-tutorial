@@ -3,7 +3,7 @@ Git: The Missing Tutorial
 
 This tutorial will help you get started with Git.
 
-> **Audience of this tutorial are beginners so don't expect advanced concepts.**
+> **Audience of this tutorial are beginners, so don't expect advanced concepts.**
 
 Before we start make sure `git --version` command successfully returns. If the output is something like **command not found** then please make sure Git is properly installed on your machine. My machine output is shown below. **Output on your machine might be different.**
 
@@ -14,7 +14,7 @@ $ git --version
 git version 2.5.4 (Apple Git-61)
 ```
 
-> **Commands that a user should type on his/her terminal are prefixed with the shell prompt symbol `$`.  The output of command follows the command. Also, you don't have to type `$` on your terminal.**
+> **Commands that a user should type on his/her terminal are prefixed with the shell prompt symbol `$`. The output of command follows the command. Also, you don't have to type `$` on your terminal.**
 
 Make sure you have configured your user with Git.  This information will be used by Git.
 
@@ -23,7 +23,7 @@ $ git config --global user.name "Your name"
 $ git config --global user.email "Your email"
 ```
 
-The command shown above populate a file named `.gitconfig` in your user home directory with configuration information.
+The command shown above populates a file named `.gitconfig` in your user home directory with configuration information.
 
 ```bash
 $ cat ~/.gitconfig
@@ -86,18 +86,18 @@ You can use version control system to store:
 
 ## Why version control system?
 
-You should use version control because:
+You should use version control because it offers the below:
 
-1. Collaboration
-2. Storing Versions
-3. Restoring Previous Versions
-4. Understanding What Happened
-5. Backup
+1. Collaboration among a team of Coders
+2. Versioning the code. Could create multiple branches to setup binary releases
+3. Restoring to previous versions
+4. Tracking the history (blame!)
+5. Backup. Old style backup methodologies like email storage, local file system or FTP backup are cumbersome.
 
 
 ## What the heck is Git?
 
-Git is a distributed version control system. It was developed by Linus Torvalds in 2005 for linux developers.
+Git is a distributed version control system. It was developed by Linus Torvalds in 2005 for linux developers and is being maintained by a large community across the world.
 
 Every Git working directory is a full-fledged repository with complete history and full version-tracking capabilities, independent of network access or a central server.
 
@@ -115,7 +115,7 @@ $ mkdir git-playground && cd git-playground
 
 ### git init
 
-To make any repository a Git managed repository, you will type the following command. These commands should be typed from inside the `git-playground` directory.
+To make any repository a Git managed repository, you can type the following command. These commands should be typed from inside the `git-playground` directory.
 
 ```bash
 $ git init
@@ -149,7 +149,7 @@ $ tree -a .git
 7 directories, 3 files
 ```
 
-`.git` is a directory where Git stores all the data. **Don't mess up with `.git` directory.**  The only file that you should change is `config`.
+`.git` is a directory where Git stores all the data. **Don't mess with the `.git` directory.** The only file that you should ever change is `config`.
 
 ```bash
 $ cat .git/config
@@ -164,13 +164,13 @@ $ cat .git/config
 	precomposeunicode = true
 ```
 
-If you want to override user for this repository then you can add user section by either editing `.git/config` file or using the `git config` command.
+If you want to override user for this repository, then you can add user section by either editing `.git/config` file or using the `git config` command.
 
 ```bash
 $ git config --local user.name "Shekhar 123"
 ```
 
-If you view contents of the `.git/config` file now, then you will see your change.
+If you view the contents of the `.git/config` file now, then you will see your change.
 
 ```bash
 $ cat .git/config
@@ -188,11 +188,11 @@ $ cat .git/config
 	name = Shekhar 123
 ```
 
-> **Please revert this change else your commits will be committed using this user name.**
+> **Please revert this change, else your commits will be committed using this user name!**
 
 ### git status
 
-Time and again we will need to know status of our Git repository. By status it means, what needs to be added to the index, what needs to be committed, is there any change that we have to commit, etc. This is the command that you will use most.
+Time and again we will need to know status of our Git repository. By status what we mean is the current state of the repository. E.g., what needs to be added to the index, what needs to be committed, if there is any change that we have to commit, etc., This is the command that you will use the most.
 
 ```bash
 $ git status
@@ -208,13 +208,13 @@ nothing to commit (create/copy files and use "git add" to track)
 
 ### git add
 
-Let's create a new file `README.md` and add a simple stupid message.
+Let's create a new file `README.md` and add a dummy message.
 
 ```bash
 $ echo "# Git Playground" >> README.md
 ```
 
-> **It is a good practice to create a file named README.md in your repository root that tells purpose of the repository.**
+> **It is a good practice to create a file named README.md in your repository root that tells the purpose of the repository.**
 
 Now, check the status of the Git repository.
 
@@ -234,7 +234,7 @@ Untracked files:
 nothing added to commit but untracked files present (use "git add" to track)
 ```
 
-**git add** stage the changes so they are picked by the next commit. In Git, you can't commit something until you make it trackable.
+**git add** stages the changes so they are picked up by the next commit. In Git, you can't commit something until you make it trackable.
 
 ```bash
 $ git add README.md
@@ -257,11 +257,11 @@ Changes to be committed:
 	new file:   README.md
 ```
 
-> **If you have multiple files then you can use `git add <file1> <file2> .. <filen>` or `git add --all` to stage them in one command.**
+> **If you have multiple files then you can use `git add <file1> <file2> .. <filen>` or `git add --all` or `git add -A` to stage them in one command.**
 
 ### git commit
 
-Once you have a smallest working change, you should commit it to your version control system. Smallest working change could be a test case, a small piece of functional code, a line or paragraph in your text file, etc. **You should commit often and daily.**
+Once you have a smallest working change, you should commit it to your version control system. Smallest working change could be a test case, a small piece of functional code, a line or paragraph in your text file, etc. **You should commit often and daily.** Also, every commit should strive to do exactly one change.
 
 After staging your changes, next step is to commit them into your local Git repository. To do that, we will use commit command as shown below.
 
@@ -280,7 +280,7 @@ Staging and committing are two different steps in Git. You can't commit a change
 $ echo "This is my Git playground."  >> README.md
 ```
 
-Check the status of your repository. This time it will say it is a modified change.
+Check the status of your repository. This time it will say it is a **modified** change.
 
 ```bash
 $ git status
@@ -311,7 +311,7 @@ $ echo "my stupid file" >> stupid.txt
 $ git add stupid.txt
 ```
 
-To remove a bad file from the Git index, we can use Git `rm` command.
+To remove such a file from the Git index, we can use Git `rm` command.
 
 ```bash
 $ git rm -f stupid.txt
@@ -341,7 +341,7 @@ Date:   Thu Jan 14 05:11:06 2016 +0530
     first commit
 ```
 
-If you want to see a commit in one line, then use `oneline` option.
+If you want to see a commit in one line, then use `--oneline` option.
 
 ```bash
 $ git log --oneline
@@ -375,7 +375,7 @@ There are many more options. You can refer to help `git help log` for more detai
 
 ### .gitignore files
 
-Every Git repository should have another configuration file `.gitignore` present in the root i.e. directly inside the `git-playground` directory. This file is used to specify files and file patterns that you want to ignore.
+Every Git repository should have another configuration file `.gitignore` present in the root i.e. directly inside the `git-playground` directory. This file is used to specify files and file patterns that you want git to ignore .
 
 ```bash
 $ echo "*.log" >> .gitignore
@@ -426,11 +426,13 @@ Now, if you execute `git diff` command, you will see nothing.
 
 ### git diff commits
 
-To compare head with the previous commit you can use the following command.
+To compare `HEAD` with the previous commit you can use the following command. Here 1 refers to the offset from the `HEAD`.
 
 ```bash
 $ git diff HEAD~1..HEAD
 ```
+
+Note that `@` is an alias for `HEAD`, so `git diff @~..@` works as well.
 
 You can also use commit ids.
 
@@ -496,7 +498,7 @@ Removing abc.log
 
 A branch represents an independent line of development. You use branch for following:
 
-1. Develop a new feature. Once you are done with the feature it will be merged into your main branch.
+1. Develop a new feature. Once you are done with the feature, it can be merged into your main branch.
 2. Fix a bug.
 3. Your experiment playground.
 
@@ -529,7 +531,7 @@ $ git branch
 * master
 ```
 
-One thing that is important to understand here is Git branches are just pointers to commits. When you create a branch, all Git needs to do is create a new pointer—it doesn’t change the repository in any other way.
+One thing that is important to understand here is Git branches are just pointers to commits. When you create a branch, all Git needs to do is create a new pointer; it doesn’t change the repository in any other way.
 
 ```bash
 $ git log --oneline --decorate
@@ -571,7 +573,7 @@ $ git commit -am "fifth commit. Read tutorial"
 
 ### git merge (ff)
 
-Once we are done with our feature, we can merge it back to master.
+Once we are done with our feature, we can merge it back to master. First, we'll switch to `master` branch.
 
 ```bash
 $ git checkout master
@@ -722,7 +724,7 @@ $ git log --oneline --graph
 
 ### git merge (conflict)
 
-In this section, we will look at scenario where there is a merge conflict. Merge conflict happens when you‘re trying to merge a branch that has changed the same part of the same file as master. Let's create a new branch `feature4`, make a change, and commit.
+In this section, we will look at scenario where there is a merge conflict. Merge conflict happens when you're trying to merge a branch that has changed the same part of the same file as master. Let's create a new branch `feature4`, make a change, and commit.
 
 ```bash
 $ git checkout -b feature4
@@ -749,7 +751,7 @@ CONFLICT (content): Merge conflict in README.md
 Automatic merge failed; fix conflicts and then commit the result.
 ```
 
-To merge the conflict, open the file in your favorite editor. I like Atom.
+To merge the conflict, open the file in your favorite editor. I like [Atom](https://github.com/atom/atom).
 
 ```bash
 $ cat README.md
@@ -822,7 +824,7 @@ $ git log --oneline --decorate --graph
 
 ## Working with remote repositories
 
-In Git, every developer has their own local copy of the repository. It has all the repository history and branches. A developer works on his local copy and when she is done with her work, she pushes her changes to a remote repository. A local repository can point to 0 or n remote repository. A remote repository could be on Github or any other cloud VCS provider or even it could be on your own machine.
+In Git, every developer has their own local copy of the repository. It has all the repository history and branches. A developer works on their local copy and when done with the work, the changes can be pushed to a remote repository. A local repository can point to 0 or more remote repositories. A remote repository could be on Github or any other cloud VCS provider or even it could be on your own machine.
 
 Let's start by creating a bare repository. Navigate to any convenient location on your filesystem and run the following command.
 
@@ -842,7 +844,7 @@ To view all the remotes, execute the following command.
 $ git remote
 ```
 
-As we have not added any remote yet so command will not print any output.
+As we have not added any remote yet, this command will not print any output.
 
 To add a new remote, execute the following command.
 
@@ -916,30 +918,30 @@ Fast-forward
 
 Github is a collaborative code management platform for open source and private projects. It has social features just like any other social website like Facebook, Twitter, etc.
 
-You use Github to store your code on a remote Git repository.  You will use Github for following reasons:
+You use Github to store your code on a remote Git repository. You can use Github for following reasons:
 
 1. Storing your data in a cloud solution which will make sure code is backed up and available 24X7.
 
-2. Collaborative code reviews
+2. Collaborative code reviews.
 
 3. Easily manage teams within organizations.
 
-4. Syntax highlighted code & rendered data
+4. Syntax highlighted code & rendered data.
 
-Read more on Github [https://github.com/features](https://github.com/features).
+Read more on Github [features](https://github.com/features).
 
-You can sign up for Github at [https://github.com/join](https://github.com/join).
+You can [sign up](https://github.com/join) for Github.
 
-There are alternatives to Github like Bitbucket but Github is the leader.
+There are alternatives to Github like Bitbucket, GitLab but Github is the leader.
 
 ### Setup SSH keys
 
-If you don't already have setup SSH keys then you should refer to https://help.github.com/articles/generating-ssh-keys/
+If you don't already have setup SSH keys then you should refer to [Generating SSH Keys](https://help.github.com/articles/generating-ssh-keys/)
 
 
 ### Create a repository
 
-Create a new repository by clicking [https://github.com/new](https://github.com/new).
+Create a [new repository](https://github.com/new).
 
 Give it name `git-playground` and choose defaults.
 
@@ -1039,7 +1041,7 @@ TODO
 
 ## Git Gui
 
-I mostly use command-line terminal. For Mac, I find gitx useful [http://gitx.frim.nl/](http://gitx.frim.nl/)
+I mostly use command-line terminal. For Mac, I find [gitx](http://gitx.frim.nl/) useful.
 
 ## Useful Git Commands
 
