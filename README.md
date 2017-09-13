@@ -55,19 +55,17 @@ $ cat ~/.gitconfig
   * git checkout
   * git merge
 * Working with remote repositories
-	* git remote
-	* git pull
-	* git push
-	* git clone
+  * git remote
+  * git pull
+  * git push
+  * git clone
 * Github basics
-	* Why and What Pull Requests?
+  * Why and What Pull Requests?
 * Advanced topics
-	* git rebase
-	* git cherry-pick
-	* git stash
+  * git rebase
+  * git cherry-pick
+  * git stash
   * git alias
-* Using Git from within your IDE(Eclipse)
-* Using a Git GUI tool
 * Useful Git commands
 
 
@@ -1033,15 +1031,6 @@ Allows you write your own commands or shortcuts. Like we have been using `git lo
 ```bash
 $ git config --global alias.mylog "log --oneline --decorate --graph"
 ```
-
-
-## Using Git from within your IDE(Eclipse)
-
-TODO
-
-## Git Gui
-
-I mostly use command-line terminal. For Mac, I find [gitx](http://gitx.frim.nl/) useful.
 
 ## Useful Git Commands
 
