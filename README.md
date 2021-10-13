@@ -659,7 +659,7 @@ $ git branch -d feature2
 
 ### git merge (commits in both master and branch)
 
-Create another new branch `feature2` and add a new commit.
+Create another new branch `feature3` and add a new commit.
 
 ```bash
 $ git checkout -b feature3
